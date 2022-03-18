@@ -9,9 +9,7 @@ Where you need to use the carousel add
     import  Carousel  from  "./Carousel";
     
     function App() {
-	    return (
-		 <Carousel  initialActiveId={1} slidesArr={slidesArr} />
-		)
+	 return  <Carousel  initialActiveId={1} slidesArr={slidesArr} />	
     }
 As you can see, Carousel requires two props.
 
@@ -24,7 +22,7 @@ As you can see, Carousel requires two props.
 
 ##  slidesArr
 Here is an example of array.
-Please note that the content of each of your slide must be wrapped inside an element (for example  < div >) with a class "card-container" that you have to add to your css file, later in this doc we'll see how.
+Please note that the content of each of your slide must be wrapped inside an element (for example  < div >) with a class "card-container", later in this doc we'll see how.
 
     import  Carousel  from  "./Carousel";
   
@@ -62,9 +60,8 @@ Please note that the content of each of your slide must be wrapped inside an ele
 		    }    
 		]
 		
-		return (
-			 <Carousel  initialActiveId={1} slidesArr={slidesArr} />
-		)
+		return <Carousel  initialActiveId={1} slidesArr={slidesArr} />
+		
     }
 
 ## Customization
@@ -76,12 +73,13 @@ but if these sizes don't fit for your project, just add this code in your CSS an
 I used a specific width because I needed to have slides with specific dimension that didn't "stretch" the content.
 
     .card-container {
-	    width: 330px;
+    	width: 330px;
     }
     
     @media (max-width: 499px) {
 	    .card-container {
-		    width: 290px;
+	       width: 290px;
+	    }
     }
 
 Besides there is also an important class "*.slider*", which is the parent container of the slides that needs a specific height.
@@ -89,8 +87,8 @@ It's by default 500px, but you can override it, if you need.
 
     .slider {
 	    padding: 0  0.5rem;
-		display: flex;
-		margin: 0  auto;
+	    display: flex;
+	    margin: 0  auto;
 	    width: 100%;
 	    height: 500px; /* Set always an height for the slider*/
 	    justify-content: center;
@@ -103,8 +101,8 @@ For further customization you can find a sandbox demo at the end, where you can 
 ## Structure
 The structure of the carousel is : 
 
-    .slider
-	    .slide
+        .slider
+	    	.slide
 		    .card-container
 			    {your_content}
 		.slide
@@ -118,9 +116,12 @@ The structure of the carousel is :
 ## Mobile Version
 In my opinion the 3d carousel is great on desktop, but it doesn't perform well on mobile.
 Personally I prefer to use a simple swipable carousel and this is what I used in this project.
+
 ![react-carousel-mobile](https://i.postimg.cc/V6NRH5CY/carousel-m.png)
 
-You need to use another div and add the classes ".cards-mobile-container" and ".flex"
+You need to use another div and add the classes ".cards-mobile-container" and ".flex" to your div.
+These are the default properties of these classes.
+
 
     .flex {
 	    display: flex;
@@ -141,7 +142,8 @@ If you are using a UI library like MUI o Chakra, you just have to use the Stack 
         {slides}
     </HStack>
 
-Inside the div or Stack you  add the "content" value of slidesArr
+Inside the div or Stack add the "content" value of slidesArr. 
+
 You can just map through it.
 
     const  slides  =  slidesArr.map((el)  =>  el.content);
@@ -154,11 +156,12 @@ At the end you should use conditional rendering in your return
 			    (<Carousel  initialActiveId={1} slidesArr={slidesArr} />) : 
 			    (<div  className="flex cards-mobile-container">
 				    {slides}
-			    </div >)}
+			    </div >)
+		   }
 		  </>
     );
 
-*isTablet* is a media query I create using Chakra UI
+*isTablet* is a media query I created using Chakra UI
 
     const  [isTablet] =  useMediaQuery("(min-width: 500px)");
 
