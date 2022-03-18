@@ -31,7 +31,7 @@ Please note that the content of each of your slide must be wrapped inside an ele
 		    {
 			    id: 1,
 			    content: 
-			    <div class="card-container"> 
+			    <div className="card-container"> 
 				    <div class="card">
 					    <img src="./example1>
 					    <p>This is just an example </p>
@@ -41,7 +41,7 @@ Please note that the content of each of your slide must be wrapped inside an ele
 		    {
 			    id: 2,
 			    content: 
-			    <div class="card-container"> 
+			    <div className="card-container"> 
 				    <div class="card">
 					    <img src="./example2.png">
 					    <p>This is just an example </p>
@@ -51,7 +51,7 @@ Please note that the content of each of your slide must be wrapped inside an ele
 		    {
 			    id: 3,
 			    content: 
-			    <div class="card-container"> 
+			    <div className="card-container"> 
 				    <div class="card">
 					    <img src="./example3.png">
 					    <p>This is just an example </p>
@@ -151,7 +151,7 @@ Inside the div or Stack add the "content" value of slidesArr.
 
 You can just map through it.
 
-    const  slides  =  slidesArr.map((el)  =>  el.content);
+`const slides =  slidesArr.map( el =>  <div key={put-unique-id-here}>{el.content}</div>)`
 
 At the end you should use conditional rendering in your return
 
@@ -174,4 +174,8 @@ At the end you should use conditional rendering in your return
 ## Demo
 
 Here you can find an example I created using Chakra UI to build some cards to use as slides.
-[React-carousel-codesandbox](https://codesandbox.io/s/pure-react-3d-carousel-responsive-j4ch91?file=/src/App.js:2537-2544)
+[React-carousel-cards-codesandbox](https://codesandbox.io/s/pure-react-3d-carousel-responsive-j4ch91?file=/src/App.js:2537-2544)
+
+Here instead you can find a very simple example in plain JS, using some images as slides.
+[React-carousel-img-codesandbox](https://codesandbox.io/s/react-img-carousel-responsive-ep90rv?file=/src/App.js)
+
