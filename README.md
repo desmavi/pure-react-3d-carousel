@@ -70,15 +70,20 @@ Please note that the content of each of your slide must be wrapped inside an ele
 
 The following is the default CSS for "card-container", 
 but if these sizes don't fit for your project, just add this code in your CSS and override these properties with your custom sizes.
-I used a specific width because I needed to have slides with specific dimension that didn't "stretch" the content.
+
+I used a specific "minwidth" equal to "maxwidth", because I needed to have slides with specific dimension that didn't "stretch" the content, and setting only the width didn't work for me.
+
+*If you want to try you can use only "width", but remember to override maxwidth and minwidth with "unset"*
 
     .card-container {
-    	width: 330px;
+		max-width: 330px;
+		min-width: 330px;
     }
     
     @media (max-width: 499px) {
 	    .card-container {
-	       width: 290px;
+	       max-width: 290px;
+	       min-width: 290px;
 	    }
     }
 
