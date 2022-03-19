@@ -4,14 +4,28 @@ It uses react functional components.
 ![react-carousel](https://i.postimg.cc/htSskJ9k/carousel.png)
 
 ## Installation
+
+You can simply download the zip with these files and move "Carousel.js" and "carousel-style.css" inside your src folder.
+
 Where you need to use the carousel add
 
-    import  Carousel  from  "./Carousel";
+     import  Carousel  from  "./Carousel"
+            
+       function App() {
+        	 return  <Carousel  initialActiveId={1} slidesArr={slidesArr}/>	
+        }
+
+
     
-    function App() {
-	 return  <Carousel  initialActiveId={1} slidesArr={slidesArr} />	
-    }
-As you can see, Carousel requires two props.
+Or you can type
+`git clone https://github.com/desmavi/pure-react-3d-carousel.git` 
+in your terminal, to clone the content of my repo.
+
+In this case to properly import the component write
+`import Carousel from "./pure-react-3d-carousel/Carousel"
+`
+
+As you can see, the Carousel component requires two props.
 
  - **slidesArr** is an array of object you have to create. Every object needs two properties: "id" and "content" *(if you're mapping data you'll also need "key"*).
 	 
@@ -22,7 +36,7 @@ As you can see, Carousel requires two props.
 
 ##  slidesArr
 Here is an example of array.
-Please note that the content of each of your slide must be wrapped inside an element (for example  < div >) with a class "card-container", later in this doc we'll see how.
+Please note that the content of each of your slide must be wrapped inside an element (for example  < div >) with a class "card-container".
 
     import  Carousel  from  "./Carousel";
   
