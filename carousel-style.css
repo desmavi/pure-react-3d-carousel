@@ -75,6 +75,11 @@ If you change it, you will need to make other adjustments*/
   }
 }
 
+.slide.prev:focus-visible,
+.slide.next:focus-visible {
+  outline:  -webkit-focus-ring-color auto 1px;
+}
+
 @media (max-width: 499px) {
   .card-container {
     max-width: 290px;
