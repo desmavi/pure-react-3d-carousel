@@ -1,0 +1,19 @@
+{
+  "name": "pure-react-3d-carousel",
+  "version": "1.0.0",
+  "description": "This is a simple react carousel without dependencies on third-party libraries. It uses react functional components. ![react-carousel](https://i.postimg.cc/htSskJ9k/carousel.png)",
+  "main": "Carousel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desmavi/pure-react-3d-carousel.git"
+  },
+  "author": "Emanuela Maviglia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desmavi/pure-react-3d-carousel/issues"
+  },
+  "homepage": "https://github.com/desmavi/pure-react-3d-carousel#readme"
+}
