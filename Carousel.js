@@ -1,5 +1,5 @@
 import "./carousel-style.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Carousel({ slidesArr, initialActiveId }) {
   const INITIAL_ACTIVE_ID = initialActiveId;
@@ -20,11 +20,16 @@ export default function Carousel({ slidesArr, initialActiveId }) {
       setActive((prev) => prev - 1);
     }
   }
+  
+  useEffect(() =>  {
+    setActive(INITIAL_ACTIVE_ID)
+  }, [slidesArr])
 
   const slides = slidesArr.map((item) => {
     return (
       <div
         key={item.id}
+        tabindex={active == item.id ? "-1" : "0"}
         className={`slide
         ${
           active === item.id
@@ -44,6 +49,13 @@ export default function Carousel({ slidesArr, initialActiveId }) {
             ? prevSlide
             : item.id === active + 1 ||
               (active === slidesArr.length && item.id === INITIAL_ACTIVE_ID)
+            ? nextSlide
+            : undefined
+        }
+        onKeyUp={
+          item.id === active - 1 || (active === INITIAL_ACTIVE_ID && item.id === slidesArr.length)
+            ? prevSlide
+            : item.id === active + 1 || (active === slidesArr.length && item.id === INITIAL_ACTIVE_ID)
             ? nextSlide
             : undefined
         }
